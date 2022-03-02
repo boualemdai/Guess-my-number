@@ -17,26 +17,39 @@ window.addEventListener("load", () => {
 
 check.addEventListener("click", () => {
   const playerNum = Number(num.value);
-  if (playerNum < gameNum) {
+  if (!playerNum) {
+    startGussing.textContent = "No Number";
+  } else if (playerNum < gameNum) {
     startGussing.textContent = "Too Low!";
-    scoreSpan.textContent--;
+    if (scoreSpan.textContent == 0) {
+      startGussing.textContent = "You lost the game";
+    } else {
+      scoreSpan.textContent--;
+    }
   } else if (playerNum > gameNum) {
     startGussing.textContent = "Too High!";
-    scoreSpan.textContent--;
+
+    if (scoreSpan.textContent == 0) {
+      startGussing.textContent = "You lost the game";
+    } else {
+      scoreSpan.textContent--;
+    }
   } else {
     startGussing.textContent = "Correct Number🥳🥳!!";
-    if(highscoreSpan.textContent<scoreSpan.textContent){
-        highscoreSpan.textContent=scoreSpan.textContent
-      }
+    if (Number(highscoreSpan.textContent) < Number(scoreSpan.textContent) ) {
+      highscoreSpan.textContent = scoreSpan.textContent;
+    }
     document.body.style.background = "#60b347";
+    num.style.background = "#60b347";
     magicBox.textContent = playerNum;
   }
 });
 again.addEventListener("click", () => {
+  gameNum = Math.ceil(Math.random() * 20);
   document.body.style.background = "#222222";
+  num.style.background = "#222222"
   magicBox.textContent = "?";
   startGussing.textContent = "Start guessing...";
   num.value = null;
   scoreSpan.textContent = 20;
-  
 });

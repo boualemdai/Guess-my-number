@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+body {
+  background-color: #222222;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.again {
+  font-size: 1.5rem;
+  padding: 15px;
+  margin: 20px;
+  color: #222222;
+}
+.between {
+  color: #eeeeee;
+  padding: 10px;
+  margin: 10px;
+  font-size: 0.9rem;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #eeeeee;
+  margin: 15px;
+
+  line-height: 50px;
+}
+.magic-box-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.magic-box {
+  height: 150px;
+  width: 150px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: #222222;
+}
+.mg-span {
+  height: 10px;
+  width: 100px;
+  background-color: #eeeeee;
+  flex-grow: 1;
+}
+.num {
+  width: 200px;
+  height: 100px;
+  margin: 30px;
+  background-color: #222222;
+  border: 4px solid #eeeeee;
+  grid-area: num;
+  justify-self: end;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 3rem;
+}
+.dispaly-section {
+  display: grid;
+  grid-template-areas:
+    "num sta"
+    "num sco"
+    "ch hsco";
+  align-items: center;
+  justify-items: start;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+}
+.check {
+  grid-area: ch;
+  padding: 10px;
+  height: 50px;
+  justify-self: end;
+  color: #222222;
+  margin-right: 67px;
+}
+.start-gussing {
+  grid-area: sta;
+  margin: 30px;
+  color: #eeeeee;
+  font-size: 1.2rem;
+  justify-self: start;
+}
+.score {
+  grid-area: sco;
+  margin: 30px;
+  display: flex;
+  color: #eeeeee;
+  font-size: 1.2rem;
+  justify-self: start;
+}
+.Highscore {
+  grid-area: hsco;
+  margin: 30px;
+  display: flex;
+  color: #eeeeee;
+  font-size: 1.2rem;
+  justify-self: start;
+}
